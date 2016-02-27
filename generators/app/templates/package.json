@@ -27,5 +27,8 @@
     "start": "node app.js"
   },
   "main": "app.js",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt-express-server": "^0.5.2"
+  }
 }

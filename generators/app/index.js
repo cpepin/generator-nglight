@@ -8,13 +8,17 @@ module.exports = generators.NamedBase.extend({
     generators.NamedBase.apply(this, arguments);
   },
   writing: {
-    dependencies: function() {
-
+    staticFiles: function() {
+      this.fs.copyTpl(
+        this.templatePath('**/*'),
+        this.destinationPath(this.name + '/'),
+        { name: this.name }
+      );
     }
   },
   install: {
     npm: function() {
-
+      this.spawnCommand('npm', ['install'], { cwd: this.name + '/' });
     }
   }
 });
