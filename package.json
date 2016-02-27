@@ -1,0 +1,14 @@
+{
+  "name": "generator-nglight",
+  "version": "0.1.0",
+  "description": "",
+  "files": [
+    "generators/app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.22.5"
+  }
+}
