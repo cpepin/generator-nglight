@@ -7,7 +7,14 @@ module.exports = generators.NamedBase.extend({
   constructor: function() {
     generators.NamedBase.apply(this, arguments);
   },
-  method1: function(){
-    this.log('Hello, World!');
+  writing: {
+    dependencies: function() {
+
+    }
+  },
+  install: {
+    npm: function() {
+
+    }
   }
 });
