@@ -1,0 +1,15 @@
+{
+  "name": "template",
+  "description": "an awesome application",
+  "main": "app.js",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
