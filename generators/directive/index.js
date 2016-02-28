@@ -11,7 +11,7 @@ module.exports = generators.Base.extend({
     this.argument('directory', { type: String, required: true });
     this.argument('directive', { type: String, required: true });
     this.module = _.camelCase(this.module);
-    this.dir = _.camelCase(this.directory);
+    this.dir = this.directory;
     this.directive = _.camelCase(this.directive);
   },
   writing: {

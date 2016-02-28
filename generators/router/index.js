@@ -10,7 +10,7 @@ module.exports = generators.Base.extend({
     this.argument('module', { type: String, required: true });
     this.argument('directory', { type: String, required: true });
     this.module = _.camelCase(this.module);
-    this.dir = _.camelCase(this.directory);
+    this.dir = this.directory;
   },
   writing: {
     module: function() {

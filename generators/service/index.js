@@ -11,7 +11,7 @@ module.exports = generators.Base.extend({
     this.argument('directory', { type: String, required: true });
     this.argument('service', { type: String, required: true });
     this.module = _.camelCase(this.module);
-    this.dir = _.camelCase(this.directory);
+    this.dir = this.directory;
     this.service = _.camelCase(this.service);
   },
   writing: {
