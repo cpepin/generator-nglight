@@ -17,7 +17,7 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css', // load static styles 
+  'styles/**/*.css', // load static styles
   'vendor/**/*.css', // load vendor css files
 ];
 
@@ -33,11 +33,6 @@ var jsFilesToInject = [
   'vendor/**/angular.js',     //we need to make sure angular loads first!
   'vendor/**/jquery.js',      //we need to make sure jquery loads first!
   'vendor/**/*.js',           //bower dependencies
-  'js/dependencies/**/*.js',
-
-  // All of the rest of your client-side js files
-  // will be injected here in no particular order.
-  'js/**/*.js',
 
   // Import all .js files from app
   'app/**/*.js',
@@ -46,7 +41,6 @@ var jsFilesToInject = [
   // '!js/ignore/these/files/*.js'
   // We excluded all spec files
   '!app/**/*spec.js',
-  '!js/dependencies/sails.io.js'
 
 ];
 
@@ -85,5 +79,3 @@ module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
 module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
   return require('path').join('assets/',tplPath);
 });
-
-
