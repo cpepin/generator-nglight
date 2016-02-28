@@ -47,25 +47,28 @@ module.exports = generators.NamedBase.extend({
     npm: function() {
       this.spawnCommand('npm', ['install']);
     },
-    test: function() { 
-      var framework = this.config.get('testframework'); 
-      if( framework === 'mocha' ) { 
+    test: function() {
+      var framework = this.config.get('testframework');
+      if( framework === 'mocha' ) {
         this.npmInstall(['mocha', 'chai', 'sinon'], { 'saveDev': true });
-      }else { 
+      }else {
         this.npmInstall(['jasmine'], { 'saveDev': true });
       }
+    },
+    bower: function() {
+      this.spawnCommand('bower', ['install']);
     }
   },
 
-  karma: function() { 
+  karma: function() {
 
     // Deal with user inputs
-    var framework = this.config.get('testframework'); 
+    var framework = this.config.get('testframework');
 
     this.composeWith('karma:app', {
       options: {
-        frameworks: framework == 'jasmine'?['jasmine']:['mocha', 'chai', 'sinon'], 
-        'config-path': this.destinationRoot() 
+        frameworks: framework == 'jasmine'?['jasmine']:['mocha', 'chai', 'sinon'],
+        'config-path': this.destinationRoot()
       }
     }, {
       local: require.resolve('generator-karma/generators/app/index.js')
