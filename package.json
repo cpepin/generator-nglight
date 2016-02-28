@@ -11,5 +11,10 @@
   "dependencies": {
     "lodash": "^4.5.1",
     "yeoman-generator": "^0.22.5"
+  },
+  "devDependencies": {
+    "generator-karma": "^2.0.0"
+  },
+  "scripts": {
   }
 }
