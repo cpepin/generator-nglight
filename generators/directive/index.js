@@ -9,16 +9,22 @@ module.exports = generators.Base.extend({
     generators.Base.apply(this, arguments);
     this.argument('module', { type: String, required: true });
     this.argument('directory', { type: String, required: true });
+    this.argument('directive', { type: String, required: true });
     this.module = _.camelCase(this.module);
     this.dir = _.camelCase(this.directory);
+    this.directive = _.camelCase(this.directive);
   },
   writing: {
     module: function() {
       this.fs.copyTpl(
-        this.templatePath('routes.js'),
+        this.templatePath('module.js'),
         this.destinationPath(this.dir + '/' +
-          this.module + '.routes.js' ),
-        { name: this.config.get('appName'), module: this.module }
+          this.config.get('appName') + '.' + this.module + '.module.js' ),
+        {
+          name: this.config.get('appName'),
+          module: this.module,
+          directive: this.directive
+        }
       );
     }
   }
