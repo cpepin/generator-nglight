@@ -6,6 +6,8 @@ var generators = require('yeoman-generator');
 module.exports = generators.NamedBase.extend({
   constructor: function() {
     generators.NamedBase.apply(this, arguments);
+    this.config.save();
+    this.config.set('appName', this.name);
   },
   writing: {
     staticFiles: function() {
