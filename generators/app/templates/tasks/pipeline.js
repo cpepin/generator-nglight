@@ -17,7 +17,8 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  'styles/**/*.css', // load static styles 
+  'vendor/**/*.css', // load vendor css files
 ];
 
 
@@ -26,14 +27,27 @@ var cssFilesToInject = [
 var jsFilesToInject = [
 
   // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+  //'js/dependencies/sails.io.js', // We dont need this
 
   // Dependencies like jQuery, or Angular are brought in here
+  'vendor/**/angular.js',     //we need to make sure angular loads first!
+  'vendor/**/jquery.js',      //we need to make sure jquery loads first!
+  'vendor/**/*.js',           //bower dependencies
   'js/dependencies/**/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/**/*.js'
+  'js/**/*.js',
+
+  // Import all .js files from app
+  'app/**/*.js',
+
+  // Use the "exclude" operator to ignore files
+  // '!js/ignore/these/files/*.js'
+  // We excluded all spec files
+  '!app/**/*spec.js',
+  '!js/dependencies/sails.io.js'
+
 ];
 
 
