@@ -18,12 +18,12 @@ module.exports = generators.Base.extend({
     module: function() {
       this.fs.copyTpl(
         this.templatePath('service.js'),
-        this.destinationPath(this.dir + '/' +
+        this.destinationPath('assets/app/' + this.dir + '/' +
           this.service + '.service.js' ),
         {
           name: this.config.get('appName'),
           module: this.module,
-          service: this.service
+          service: this.service + 'Service'
         }
       );
     }
