@@ -64,12 +64,20 @@ module.exports = generators.NamedBase.extend({
 
   writing: {
     staticFiles: function() {
+
+      // Copy over static files except ignore
       this.fs.copyTpl(
-        this.templatePath('**/*'),
+        this.templatePath('**/!(*gitignore)'),
         this.destinationRoot(),
         { name: this.name, 
           testframework: this.config.get('testframework')
         }
+      );
+
+      // Copy over ignore file
+      this.fs.copyTpl(
+        this.templatePath('gitignore'),
+        this.destinationPath('.gitignore')
       );
     }
   },
