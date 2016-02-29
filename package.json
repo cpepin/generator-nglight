@@ -16,5 +16,21 @@
     "generator-karma": "^2.0.0"
   },
   "scripts": {
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cpepin/generator-nglight.git"
+  },
+  "author": {
+    "name": "Cameron Pepin",
+    "email": "pepin.cameron@gmail.com",
+    "url": "http://cpepin.github.io/"
+  },
+  "contributors": [
+    {
+      "name": "Joe Puzzo",
+      "url": "http://joepuzzo.github.io/"
+    }
+  ],
+  "license": "ISC"
 }
