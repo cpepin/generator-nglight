@@ -1,6 +1,6 @@
 {
   "name": "generator-nglight",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "files": [
     "generators/app"
