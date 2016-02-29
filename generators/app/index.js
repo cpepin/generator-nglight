@@ -68,7 +68,20 @@ module.exports = generators.NamedBase.extend({
     this.composeWith('karma:app', {
       options: {
         frameworks: framework == 'jasmine'?['jasmine']:['mocha', 'chai', 'sinon'],
-        'config-path': this.destinationRoot()
+        'config-path': this.destinationRoot(), 
+        'app-files': [
+              'bower_components/jquery/dist/jquery.js',
+              'bower_components/angular/angular.js',
+              'bower_components/angular-mocks/angular-mocks.js',
+              'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+              'bower_components/angular-bootstrap/ui-bootstrap-tpls.js', 
+              'assets/app/**/app.core.module.js',
+              'assets/app/**/app.module.js',
+              'assets/app/**/*module.js',
+              'assets/app/**/*.js',
+              'assets/app/**/*.html',  
+              'assets/**/*spec.js'
+            ]
       }
     }, {
       local: require.resolve('generator-karma/generators/app/index.js')

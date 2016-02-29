@@ -34,6 +34,11 @@ var jsFilesToInject = [
   'vendor/**/jquery.js',      //we need to make sure jquery loads first!
   'vendor/**/*.js',           //bower dependencies
 
+  // We need to make sure angular modules get loaded first 
+  'app/**/app.core.module.js',
+  'app/**/app.module.js',
+  'app/**/*module.js',
+
   // Import all .js files from app
   'app/**/*.js',
 

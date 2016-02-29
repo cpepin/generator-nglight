@@ -1,6 +1,7 @@
 (function() {
   angular
-    .module('<%= name %>', [
-      '<%= name %>.core'
+    .module('test', [
+      'test.core',
+      'test.landingPage'
     ]);
 })();
