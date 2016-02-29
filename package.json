@@ -13,7 +13,9 @@
     "yeoman-generator": "^0.22.5",
     "generator-karma": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-karma": "^0.12.1"
+  },
   "scripts": {},
   "repository": {
     "type": "git",
