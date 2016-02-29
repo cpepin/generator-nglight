@@ -1,7 +1,7 @@
 (function() {
   angular
-    .module('test', [
-      'test.core',
-      'test.landingPage'
+    .module('<%= name %>', [
+      '<%= name %>.core',
+      '<%= name %>.landingPage'
     ]);
 })();

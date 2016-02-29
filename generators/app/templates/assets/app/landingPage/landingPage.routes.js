@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('test.landingPage')
+    .module('<%= name %>.landingPage')
     .config(routerConfig);
 
   routerConfig.$inject = ['$stateProvider', '$urlRouterProvider'];

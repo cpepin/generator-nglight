@@ -3,9 +3,9 @@ describe('When a user is on the landingPage', function() {
   var scope;
   var ctrl;
 
-  beforeEach(module('test'));
-  beforeEach(module('test.core'));
-  beforeEach(module('test.landingPage'));
+  beforeEach(module('<%= name %>')); 
+  beforeEach(module('<%= name %>.core'));
+  beforeEach(module('<%= name %>.landingPage'));
 
   beforeEach(inject(function($rootScope, $controller) {
     scope = $rootScope.$new();

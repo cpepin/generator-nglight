@@ -2,7 +2,7 @@
   'use strict';
   
   angular
-      .module('test.landingPage', [
-          'test.core'
+      .module('<%= name %>.landingPage', [
+          '<%= name %>.core'
       ]);
 })();

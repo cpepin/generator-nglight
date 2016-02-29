@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-      .module('test.landingPage')
+      .module('<%= name %>.landingPage')
       .controller('landingPageController', landingPageController);
 
       landingPageController.$inject = [];
