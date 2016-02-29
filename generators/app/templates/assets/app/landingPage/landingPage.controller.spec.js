@@ -13,7 +13,11 @@ describe('When a user is on the landingPage', function() {
   }));
 
   it('they should see the tile HelloWorld!', function(){
-    expect(ctrl.title).to.equal("HelloWorld!");
+    <% if( testframework == 'mocha'){ %>
+      expect(ctrl.title).to.equal("HelloWorld!");
+    <% } else{ %>
+      expect(ctrl.title).toEqual("HelloWorld!");
+    <% } %>
   });
 
 });

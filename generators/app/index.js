@@ -31,33 +31,7 @@ module.exports = generators.NamedBase.extend({
       this.config.set('testframework', answers.testframework );
       done();
     }.bind(this));
-  },
 
-  writing: {
-    staticFiles: function() {
-      this.fs.copyTpl(
-        this.templatePath('**/*'),
-        this.destinationRoot(),
-        { name: this.name }
-      );
-    }
-  },
-
-  install: {
-    npm: function() {
-      this.spawnCommand('npm', ['install']);
-    },
-    test: function() {
-      var framework = this.config.get('testframework');
-      if( framework === 'mocha' ) {
-        this.npmInstall(['mocha', 'chai', 'sinon'], { 'saveDev': true });
-      }else {
-        this.npmInstall(['jasmine'], { 'saveDev': true });
-      }
-    },
-    bower: function() {
-      this.spawnCommand('bower', ['install']);
-    }
   },
 
   karma: function() {
@@ -86,6 +60,35 @@ module.exports = generators.NamedBase.extend({
     }, {
       local: require.resolve('generator-karma/generators/app/index.js')
     });
-  }
+  }, 
 
+  writing: {
+    staticFiles: function() {
+      this.fs.copyTpl(
+        this.templatePath('**/*'),
+        this.destinationRoot(),
+        { name: this.name, 
+          testframework: this.config.get('testframework')
+        }
+      );
+    }
+  },
+
+  install: {
+    npm: function() {
+      this.spawnCommand('npm', ['install']);
+    },
+    test: function() {
+      var framework = this.config.get('testframework');
+      if( framework === 'mocha' ) {
+        this.npmInstall(['mocha', 'chai', 'sinon'], { 'saveDev': true });
+      }else {
+        this.npmInstall(['jasmine'], { 'saveDev': true });
+      }
+    },
+    bower: function() {
+      this.spawnCommand('bower', ['install']);
+    }
+  },
+ 
 });
