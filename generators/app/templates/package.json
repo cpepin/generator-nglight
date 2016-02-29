@@ -32,6 +32,7 @@
   "license": "",
   "devDependencies": {
     "grunt-express-server": "^0.5.2",
-    "grunt-karma": "^0.12.1"
+    "grunt-karma": "^0.12.1",
+    "grunt-zip": "^0.17.1"
   }
 }
