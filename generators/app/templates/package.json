@@ -31,6 +31,7 @@
   "main": "app.js",
   "license": "",
   "devDependencies": {
-    "grunt-express-server": "^0.5.2"
+    "grunt-express-server": "^0.5.2",
+    "grunt-karma": "^0.12.1"
   }
 }
