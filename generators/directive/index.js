@@ -17,9 +17,9 @@ module.exports = generators.Base.extend({
   writing: {
     module: function() {
       this.fs.copyTpl(
-        this.templatePath('module.js'),
+        this.templatePath('directive.js'),
         this.destinationPath('assets/app/' + this.dir + '/' +
-          this.config.get('appName') + '.' + this.module + '.module.js' ),
+          this.directive + '.directive.js' ),
         {
           name: this.config.get('appName'),
           module: this.module,
