@@ -13,6 +13,16 @@ module.exports = function(grunt) {
     unit: {
       configFile: 'karma.conf.js',
       singleRun: true
+    },
+    one: {
+      configFile: 'karma.conf.js',
+      singleRun: true,
+      options: {
+        files: [
+          // list of files / patterns to load in the browser, except spec files.
+
+        ]
+      }
     }
   });
 

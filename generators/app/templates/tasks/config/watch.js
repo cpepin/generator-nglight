@@ -17,13 +17,20 @@
 module.exports = function(grunt) {
 
   grunt.config.set('watch', {
-    assets: {
-
+    all: {
       // Assets to watch:
       files: ['assets/**/*', 'tasks/pipeline.js', '!**/node_modules/**'],
 
       // When assets are changed:
-      tasks: ['syncAssets' , 'linkAssets' ]
+      tasks: ['syncAssets', 'linkAssets']
+    },
+    //For watching only js and spec files
+    spec: {
+      files: ['assets/**/*.js','assets/**/*.spec.js'],
+      options: {spawn: false},
+      // When assets are changed:
+      tasks: ['karma:one']
+
     }
   });
 
