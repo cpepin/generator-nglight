@@ -34,7 +34,7 @@ var jsFilesToInject = [
   'vendor/**/jquery.js',      //we need to make sure jquery loads first!
   'vendor/**/*.js',           //bower dependencies
 
-  // We need to make sure angular modules get loaded first 
+  // We need to make sure angular modules get loaded first
   'app/**/app.core.module.js',
   'app/**/app.module.js',
   'app/**/*module.js',
@@ -75,12 +75,21 @@ var tmpPath = '.tmp/public/';
 // Prefix relative paths to source files so they point to the proper locations
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
-module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
-  return require('path').join('.tmp/public/', cssPath);
+module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
+  var tmpPath = '.tmp/public/';
+  if (path.substring(0,1) == '!')
+    return '!' + tmpPath + path.substring(1);
+  return tmpPath + path;
 });
-module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
-  return require('path').join('.tmp/public/', jsPath);
+module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
+  var tmpPath = '.tmp/public/';
+  if (path.substring(0,1) == '!')
+    return '!' + tmpPath + path.substring(1);
+  return tmpPath + path;
 });
-module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
-  return require('path').join('assets/',tplPath);
+module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
+  var tmpPath = 'assets/';
+  if (path.substring(0,1) == '!')
+    return '!' + tmpPath + path.substring(1);
+  return tmpPath + path;
 });
