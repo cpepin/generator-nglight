@@ -42,25 +42,41 @@ module.exports = generators.NamedBase.extend({
     this.composeWith('karma:app', {
       options: {
         frameworks: framework == 'jasmine'?['jasmine']:['mocha', 'chai', 'sinon'],
-        'config-path': this.destinationRoot(), 
+        plugins: ['karma-junit-reporter', 'karma-ng-html2js-preprocessor'],
+        'config-path': this.destinationRoot(),
         'app-files': [
               'bower_components/jquery/dist/jquery.js',
               'bower_components/angular/angular.js',
               'bower_components/angular-mocks/angular-mocks.js',
               'bower_components/angular-ui-router/release/angular-ui-router.min.js',
-              'bower_components/angular-bootstrap/ui-bootstrap-tpls.js', 
+              'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
               'assets/app/**/app.core.module.js',
               'assets/app/**/app.module.js',
               'assets/app/**/*module.js',
               'assets/app/**/*.js',
-              'assets/app/**/*.html',  
+              'assets/app/**/*.html',
               'assets/**/*spec.js'
-            ]
+            ],
+        'junitReporter' : {
+          outputDir: '',
+          useBrowserName: false,
+          outputFile: 'test-results.xml',
+          suite: ''
+        },
+        'ngHtml2JsPreprocessor' : {
+          stripPrefix: 'assets/',
+          moduleName: function(htmlPath, originalPath) {
+            return 'bookMe.' + htmlPath.split('/')[1];
+          }
+        },
+        'preprocessors' : {
+          'assets/app/**/*.html' : ['ng-html2js']
+        }
       }
     }, {
       local: require.resolve('generator-karma/generators/app/index.js')
     });
-  }, 
+  },
 
   writing: {
     staticFiles: function() {
@@ -69,7 +85,7 @@ module.exports = generators.NamedBase.extend({
       this.fs.copyTpl(
         this.templatePath('**/!(*gitignore)'),
         this.destinationRoot(),
-        { name: this.name, 
+        { name: this.name,
           testframework: this.config.get('testframework')
         }
       );
@@ -98,5 +114,5 @@ module.exports = generators.NamedBase.extend({
       this.spawnCommand('bower', ['install']);
     }
   },
- 
+
 });

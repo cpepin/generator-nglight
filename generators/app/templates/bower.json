@@ -20,7 +20,14 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.4.8",
-    "jquery": "~2.2.0"
+    "jquery": "~2.2.0",
+    "grunt-protractor-runner": "^3.0.0",
+    "grunt-zip": "^0.17.1",
+    "https-proxy-agent": "^1.0.0",
+    "ip": "^1.1.0",
+    "ng-midway-tester": "^2.0.5",
+    "ng-mock-e2e": "^0.1.1",
+    "protractor": "^3.1.1"
   },
   "exportsOverride": {
     "angular-bootstrap": {
@@ -29,7 +36,7 @@
     "bootstrap": {
       "css": "dist/css/bootstrap.min.css*"
     },
-    "main": {      
+    "main": {
           "js": "**/*.js",
           "css": "**/*.css"
     }
