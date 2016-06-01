@@ -99,9 +99,9 @@ module.exports = generators.NamedBase.extend({
   },
 
   install: {
-    npm: function() {
+    /*npm: function() {
       this.spawnCommand('npm', ['install']);
-    },
+    },*/
     test: function() {
       var framework = this.config.get('testframework');
       if( framework === 'mocha' ) {
@@ -110,9 +110,9 @@ module.exports = generators.NamedBase.extend({
         this.npmInstall(['jasmine'], { 'saveDev': true });
       }
     },
-    bower: function() {
+    /*bower: function() {
       this.spawnCommand('bower', ['install']);
-    }
+    }*/
   },
 
 });

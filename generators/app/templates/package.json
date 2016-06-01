@@ -33,6 +33,11 @@
   "devDependencies": {
     "grunt-express-server": "^0.5.2",
     "grunt-karma": "^0.12.1",
-    "grunt-zip": "^0.17.1"
+    "grunt-zip": "^0.17.1",
+    "grunt-protractor-runner": "^3.0.0",
+    "https-proxy-agent": "^1.0.0",
+    "ip": "^1.1.0",
+    "ng-midway-tester": "^2.0.5",
+    "ng-mock-e2e": "^0.1.1"
   }
 }
