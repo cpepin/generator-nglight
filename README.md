@@ -20,7 +20,7 @@
 
   This will generate your new app! You will be prompted for a test framework. You can choose either jasmine or mocha.
 
-4. Now run npm install to download any additional dependencies
+4. Now run `npm install` and `bower install` to download dependencies
 5. And walla! you have a fully operational battle station... I mean angular application!
 
 ## Usage
@@ -63,7 +63,7 @@ is to enforce modular design.
 
 To generate a new module, use the following command:
 
-`yo ngLight:module <module name> <directory>`
+`yo nglight:module <module name> <directory>`
 
 This generates a new sub module (under the main project module) in assets/app/<directory>/<module name>.module.js.
 ** BE SURE TO ADD THIS MODULE AS A DEPENDENCY TO THE MAIN MODULE **
@@ -72,7 +72,7 @@ This generates a new sub module (under the main project module) in assets/app/<d
 
 To generate a new router, use the following command:
 
-`yo ngLight:router <module name> <directory>`
+`yo nglight:router <module name> <directory>`
 
 This generates a new sub router in assets/app/<directory>/<module name>.routes.js.
 
@@ -80,7 +80,7 @@ This generates a new sub router in assets/app/<directory>/<module name>.routes.j
 
 To generate a new controller, use the following command:
 
-`yo ngLight:controller <moduleName> <directory> <controllerName>`
+`yo nglight:controller <moduleName> <directory> <controllerName>`
 
 This generates a new controller in assets/app/<directory>/<controllerName>.controller.js.
 
@@ -88,7 +88,7 @@ This generates a new controller in assets/app/<directory>/<controllerName>.contr
 
 To generate a new service, use the following command:
 
-`yo ngLight:service <moduleName> <directory> <serviceName>`
+`yo nglight:service <moduleName> <directory> <serviceName>`
 
 This generates a new service in assets/app/<directory>/<serviceName>.service.js.
 
@@ -96,7 +96,7 @@ This generates a new service in assets/app/<directory>/<serviceName>.service.js.
 
 To generate a new directive, use the following command:
 
-`yo ngLight:directive <moduleName> <directory> <directiveName>`
+`yo nglight:directive <moduleName> <directory> <directiveName>`
 
 This generates a new service in assets/app/<directory>/<directiveName>.directive.js.
 
